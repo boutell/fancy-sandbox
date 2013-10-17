@@ -1,0 +1,5 @@
+<h3>Promoter: {{ item.title | e }}</h3>
+<h3>Events</h3>
+{% for event in item._events %}
+  <h4><a href="{{ event.url }}">{{ event.title | e }}</a></h4>
+{% endfor %}

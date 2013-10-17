@@ -1,0 +1,4 @@
+<h3>Caterers</h3>
+{% for item in items %}
+  <h4><a href="{{ item.url }}">{{ item.title | e }}</a></h4>
+{% endfor %}

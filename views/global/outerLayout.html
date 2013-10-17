@@ -20,7 +20,12 @@
           {# edit === can edit THIS page #}
           {{ aposPagesMenu({ page: page, edit: edit }) }}
           {{ aposBlogMenu({ edit: permissions.edit }) }}
+          {{ aposEventsMenu({ edit: permissions.edit }) }}
+          {{ aposPromoterMenu({ edit: permissions.edit }) }}
+          {{ aposCatererMenu({ edit: permissions.edit }) }}
           {{ aposMapMenu({ edit: permissions.edit }) }}
+          {{ aposPeopleMenu({ edit: permissions.admin }) }}
+          {{ aposGroupsMenu({ edit: permissions.admin }) }}
           {{ aposMediaMenu({ edit: permissions.edit })}}
           {{ aposTagsMenu({ edit: permissions.admin }) }}
 

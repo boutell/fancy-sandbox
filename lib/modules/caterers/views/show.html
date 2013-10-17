@@ -1,0 +1,12 @@
+<h3>Caterer: {{ item.title | e }}</h3>
+<h3>Events</h3>
+{% for event in item._events %}
+  <h4>
+    <a href="{{ event.item.url }}">{{ event.item.title | e }}</a>
+  </h4>
+  <h5>
+    Course: {{ event.relationship.course | e }}
+    Dish: {{ event.relationship.dish | e }}
+    Donor: {% if event.relationship.donor %}Yes{% else %}No{% endif %}
+  </h5>
+{% endfor %}

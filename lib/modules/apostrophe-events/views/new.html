@@ -1,0 +1,30 @@
+{% include 'snippetMacros.html' %}
+<div class="apos-modal apos-template {% block class %}apos-new-event{% endblock %}">
+  <h3>{% block label %}New Event{% endblock %}</h3>
+  {% block topButtons %}
+  {% endblock %}
+  <div class="apos-modal-body">
+    <form>
+      {{ snippetText('title', 'Title') }}
+      {# Slugs become editable later, allow the edit template to add them here #}
+      {% block slug %}{% endblock %}
+      {{ snippetText('start-date', 'Start Date') }}
+      {{ snippetText('start-time', 'Start Time') }}
+      {{ snippetText('end-date', 'End Date') }}
+      {{ snippetText('end-time', 'End Time') }}
+      {{ snippetTags('tags', 'Tags (comma-separated)') }}
+      {{ snippetBoolean('published', 'Published') }}
+      {# The real work for these is in main.js, just get placeholders into the form #}
+      {{ snippetArea('body', 'Description') }}
+      {{ snippetSingleton('thumbnail', 'Thumbnail') }}
+      {{ snippetText('address', 'Address') }}
+      {# Or you may pick a map location, a nice example of joins #}
+      {{ snippetSelective('_location', 'Location') }}
+      {{ snippetSelective('_promoters', 'Promoters') }}
+      {{ snippetSelective('_caterers', 'Caterers', { extras: aposFind(fields, 'name', '_caterers').relationship }) }}
+    </form>
+  </div>
+  {% block buttons %}
+  {{ snippetNewButtons() }}
+  {% endblock %}
+</div>
