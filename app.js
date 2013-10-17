@@ -135,7 +135,8 @@ var site = require('apostrophe-site')({
           relationshipsField: 'catererRelationships'
         }
       ]
-    }
+    },
+    'apostrophe-redirects': {}
   },
 
   // These are assets we want to push to the browser.
